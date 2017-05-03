@@ -18,7 +18,7 @@ class CreateOperacionesTable extends Migration
             $table->string('acuerdo');
             $table->string('campaña');
             $table->double('capital');
-            $table->
+            $table->string('cuenta');
             $table->timestamps();
         });
     }
