@@ -20,18 +20,18 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('address');
             $table->string('type_home');
-            $table->string('number_phone_home');
-            $table->string('number_phone_familiar');
-            $table->string('number_phone_neighbour');
-            $table->string('number_phone_personal');
+            $table->string('number_phone_home')->nullable();
+            $table->string('number_phone_familiar')->nullable();
+            $table->string('number_phone_neighbour')->nullable();
+            $table->string('number_phone_personal')->nullable();
             $table->string('password');
 
-            $table->string('new_address');
-            $table->string('new_type_home');
-            $table->string('new_number_phone_home');
-            $table->string('new_number_phone_familiar');
-            $table->string('new_number_phone_neighbour');
-            $table->string('new_number_phone_personal');
+            $table->string('new_address')->nullable();
+            $table->string('new_type_home')->nullable();
+            $table->string('new_number_phone_home')->nullable();
+            $table->string('new_number_phone_familiar')->nullable();
+            $table->string('new_number_phone_neighbour')->nullable();
+            $table->string('new_number_phone_personal')->nullable();
 
             $table->rememberToken();
             $table->timestamps();
