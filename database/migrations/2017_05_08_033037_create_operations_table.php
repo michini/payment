@@ -41,6 +41,32 @@ class CreateOperationsTable extends Migration
             $table->smallInteger('cuoven');
             $table->string('campaign');
             $table->char('base');
+
+            $table->integer('agency_id')->unsigned();
+            $table->integer('business_id')->unsigned();
+            $table->integer('user_id')->unsigned();
+            $table->integer('purse_id')->unsigned();
+
+            $table->foreign('agency_id')
+                    ->references('id')
+                    ->on('agencies')
+                    ->onDelete('cascade');
+
+            $table->foreign('business_id')
+                ->references('id')
+                ->on('business')
+                ->onDelete('cascade');
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
+
+            $table->foreign('purse_id')
+                ->references('id')
+                ->on('purses')
+                ->onDelete('cascade');
+
             $table->timestamps();
         });
     }
