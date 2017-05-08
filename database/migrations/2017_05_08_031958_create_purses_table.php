@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCarteraTable extends Migration
+class CreatePursesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,9 @@ class CreateCarteraTable extends Migration
      */
     public function up()
     {
-        Schema::create('cartera', function (Blueprint $table) {
+        Schema::create('purses', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('descripcion');
-            $table->integer('id_empresa')->unsigned();
-
-            $table->foreign('id_empresa')
-                    ->references('id')
-                    ->on('empresa')
-                    ->onDelete('cascade');
-
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -34,6 +27,6 @@ class CreateCarteraTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cartera');
+        Schema::dropIfExists('purses');
     }
 }
