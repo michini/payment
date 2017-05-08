@@ -25,7 +25,7 @@ class CreateManagementsTable extends Migration
 
             $table->foreign('reason_id')
                     ->references('id')
-                    ->on('role_user')
+                    ->on('reasons')
                     ->onDelete('cascade');
             $table->foreign('user_id')
                     ->references('user_id')
