@@ -26,6 +26,8 @@ class CreateAgenciesTable extends Migration
                     ->on('business')
                     ->onDelete('cascade');
 
+            //$table->primary(['business_id']);
+
             $table->timestamps();
         });
     }
